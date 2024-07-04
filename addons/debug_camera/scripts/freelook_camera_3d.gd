@@ -8,6 +8,8 @@ class_name FreelookCamera3D
 @export_range(1, 100, 0.1) var boost_speed_multiplier : float = 3.0
 @onready var _velocity = default_velocity
 
+var throw_tween : Tween
+
 
 func _process(delta: float) -> void:
 	var direction = Vector3(
@@ -36,4 +38,4 @@ func _unhandled_input(event: InputEvent) -> void:
 			MOUSE_BUTTON_WHEEL_UP: # increase fly velocity
 				_velocity *= speed_scale
 			MOUSE_BUTTON_WHEEL_DOWN: # decrease fly velocity
-				_velocity *= speed_scale
+				_velocity /= speed_scale
