@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	).normalized()
 	
 	if Input.is_physical_key_pressed(KEY_SHIFT): # boost
-		position += direction.rotated(Vector3.UP, rotation.y) * delta * _velocity
+		position += direction.rotated(Vector3.UP, rotation.y) * delta * _velocity * boost_speed_multiplier
 	else:
 		position += direction.rotated(Vector3.UP, rotation.y) * delta * _velocity
 

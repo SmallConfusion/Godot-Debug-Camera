@@ -56,5 +56,5 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 	elif event is InputEventMouseMotion && _moveCamera:
 		position += (_previous_position - event.position) / _zoom_level
-		_throw_position = (_previous_position - event.position) * throw_distance
+		_throw_position = (_previous_position - event.position) * throw_distance / _zoom_level
 		_previous_position = event.position
